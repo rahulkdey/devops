@@ -45,6 +45,8 @@ git push
 git push --tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 
+echo '[{"name":"$IMAGE:latest","imageUri":"$USERNAME/$IMAGE:latest"}]' > imagedefinitions.json
+
 # push it
 docker push $USERNAME/$IMAGE:latest
 docker push $USERNAME/$IMAGE:$version
